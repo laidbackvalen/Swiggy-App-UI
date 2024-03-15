@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/view2">
+
+
+        <!--  EVERYTHING INSIDE NESTED SCROLL VIEW WILL SCROLL AS NORMAL SCROLLING      -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <!--                WITHOUT ABOVE PROPERTY THEIR WILL BE NO ACTION-->
+
+                <!--profile section-->
+
+                <!--EVERYTHING INSIDE THIS WILL COLLAPSE
+                      LIKE BELOW CODE REPRESENTS PROFILE SECTION WHICH WILL GOES UP AND COLLAPSE -->
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/address"
+                        app:layout_constraintEnd_toEndOf="@id/view"
+                        app:layout_constraintHorizontal_bias="0.287"
+                        app:layout_constraintStart_toStartOf="@id/view"
+                        app:layout_constraintTop_toTopOf="@id/view" />
+
+                    <ImageView
+                        android:id="@+id/users"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:paddingStart="10dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/textView"
+                        app:layout_constraintEnd_toStartOf="@id/name"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="@+id/textView"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/baseline_supervised_user_circle_24" />
+
+                    <ImageView
+                        android:id="@+id/downArrow"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="60dp"
+                        android:paddingEnd="25dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/name"
+                        app:layout_constraintEnd_toEndOf="@+id/textView"
+                        app:layout_constraintStart_toEndOf="@id/name"
+                        app:layout_constraintTop_toTopOf="@+id/name"
+                        app:layout_constraintVertical_bias="1.0"
+                        app:srcCompat="@drawable/baseline_keyboard_arrow_down_24" />
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:gravity="bottom|center"
+                        android:minWidth="50dp"
+                        android:paddingBottom="5dp"
+                        android:text="Patel"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/users"
+                        app:layout_constraintEnd_toStartOf="@+id/downArrow"
+                        app:layout_constraintStart_toEndOf="@+id/users"
+                        app:layout_constraintTop_toTopOf="@+id/users" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:paddingStart="20dp"
+                        android:text="B 702, Grandeur Saffire, Near AmitBloomfield"
+                        app:layout_constraintBottom_toBottomOf="@id/view"
+                        app:layout_constraintEnd_toEndOf="@id/textView"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+
+                    <View
+                        android:id="@+id/view"
+                        android:layout_width="211dp"
+                        android:layout_height="57dp"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.002" />
+                    <!--         app:layout_constraintEnd_toStartOf="@id/imageView5"-->
+
+                    <ImageView
+                        android:id="@+id/buyone"
+                        android:layout_width="71dp"
+                        android:layout_height="36dp"
+                        android:layout_marginEnd="10dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/proadmin"
+                        app:layout_constraintEnd_toStartOf="@+id/proadmin"
+                        app:layout_constraintHorizontal_bias="0.96"
+                        app:layout_constraintStart_toEndOf="@+id/view"
+                        app:layout_constraintTop_toTopOf="@+id/proadmin"
+                        app:layout_constraintVertical_bias="0.0"
+                        app:srcCompat="@drawable/buyone" />
+
+                    <ImageView
+                        android:id="@+id/proadmin"
+                        android:layout_width="32dp"
+                        android:layout_height="33dp"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/edit_cricle"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.567"
+                        app:srcCompat="@drawable/baseline_person" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+            <!-- THIS WILL STICK ABOVE WHEN SCROLL -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/searchtextView"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+
+                    android:background="@drawable/edit_rectangle"
+                    android:ellipsize="end"
+                    android:hint="Search for dishes, restaurants..."
+                    android:maxLines="1"
+                    android:paddingStart="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="10dp"
+                    android:text="Search for dishes, restaurants.."
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/SearchIcon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:foregroundGravity="center"
+                    app:layout_constraintBottom_toBottomOf="@id/seprate"
+                    app:layout_constraintEnd_toStartOf="@id/seprate"
+                    app:layout_constraintTop_toTopOf="@id/seprate"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/baseline_search" />
+
+                <TextView
+                    android:id="@+id/seprate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:hint="|"
+                    android:textSize="30sp"
+                    app:layout_constraintBottom_toBottomOf="@id/mic"
+                    app:layout_constraintEnd_toStartOf="@id/mic"
+                    app:layout_constraintTop_toTopOf="@id/mic"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <ImageView
+                    android:id="@+id/mic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:foregroundGravity="center"
+                    android:paddingEnd="10dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/searchtextView"
+                    app:layout_constraintEnd_toEndOf="@+id/searchtextView"
+                    app:layout_constraintTop_toTopOf="@+id/searchtextView"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@drawable/baseline_mic_24" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--constraint layout inside APPbar layout -->
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:background="@color/white"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/foodimg"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toTopOf="@+id/foodimgText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/food" />
+
+                <ImageView
+                    android:id="@+id/instaimg"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/foodimg"
+                    app:layout_constraintEnd_toStartOf="@+id/dineimg"
+                    app:layout_constraintStart_toEndOf="@+id/foodimg"
+                    app:layout_constraintTop_toTopOf="@+id/foodimg"
+                    app:srcCompat="@drawable/instamart" />
+
+                <ImageView
+                    android:id="@+id/dineimg"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/instaimg"
+                    app:layout_constraintEnd_toStartOf="@id/genieimg"
+                    app:layout_constraintStart_toEndOf="@id/instaimg"
+                    app:layout_constraintTop_toTopOf="@+id/instaimg"
+                    app:srcCompat="@drawable/dineout"
+                    tools:layout_editor_absoluteX="221dp" />
+
+                <ImageView
+                    android:id="@+id/genieimg"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_marginEnd="20dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/dineimg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/dineimg"
+                    app:srcCompat="@drawable/genie" />
+
+                <TextView
+                    android:id="@+id/foodimgText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Food"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/limitedTimeOffer"
+                    app:layout_constraintEnd_toEndOf="@+id/foodimg"
+                    app:layout_constraintHorizontal_bias="0.529"
+                    app:layout_constraintStart_toStartOf="@+id/foodimg"
+                    app:layout_constraintTop_toBottomOf="@id/foodimg" />
+
+                <TextView
+                    android:id="@+id/instaimgText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Instamart"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/foodimgText"
+                    app:layout_constraintEnd_toEndOf="@+id/instaimg"
+                    app:layout_constraintStart_toStartOf="@+id/instaimg"
+                    app:layout_constraintTop_toTopOf="@+id/foodimgText" />
+
+                <TextView
+                    android:id="@+id/dineimgText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dineout"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/instaimgText"
+                    app:layout_constraintEnd_toEndOf="@+id/dineimg"
+                    app:layout_constraintStart_toStartOf="@+id/dineimg"
+                    app:layout_constraintTop_toBottomOf="@+id/instaimgText" />
+
+                <TextView
+                    android:id="@+id/genieimgText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Genie"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/dineimgText"
+                    app:layout_constraintEnd_toEndOf="@+id/genieimg"
+                    app:layout_constraintStart_toStartOf="@+id/genieimg"
+                    app:layout_constraintTop_toTopOf="@+id/dineimgText" />
+
+                <ImageView
+                    android:id="@+id/limitedTimeOffer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="24dp"
+                    app:layout_constraintBottom_toTopOf="@id/horizontalScrollView"
+                    app:layout_constraintEnd_toEndOf="@+id/genieimg"
+                    app:layout_constraintHorizontal_bias="0.517"
+                    app:layout_constraintStart_toStartOf="@+id/foodimg"
+                    app:layout_constraintTop_toBottomOf="@+id/foodimgText"
+                    app:srcCompat="@drawable/swiggyonelimitedtimeoffer" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="0dp"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="24dp"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/view3"
+                    app:layout_constraintTop_toBottomOf="@+id/limitedTimeOffer">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout2"
+                        android:layout_width="0dp"
+                        android:layout_height="250dp">
+
+                        <ImageView
+                            android:id="@+id/rectGreenHoriscroll"
+                            android:layout_width="285dp"
+                            android:layout_height="250dp"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginEnd="24dp"
+                            android:scrollbarSize="10dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+                            app:layout_constraintEnd_toStartOf="@+id/rectImg"
+                            app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+                            app:layout_constraintTop_toTopOf="@+id/constraintLayout2"
+                            app:layout_constraintVertical_bias="0.0"
+                            app:srcCompat="@drawable/edit_rec_gradient" />
+
+                        <ImageView
+                            android:id="@+id/rectImg"
+                            android:layout_width="285dp"
+                            android:layout_height="250dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintEnd_toEndOf="@+id/rectBlueHoriscroll"
+                            app:layout_constraintStart_toEndOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintTop_toTopOf="@+id/rectGreenHoriscroll"
+                            app:srcCompat="@drawable/rect_image" />
+
+                        <ImageView
+                            android:id="@+id/rectBlueHoriscroll"
+                            android:layout_width="285dp"
+                            android:layout_height="250dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/rectImg"
+                            app:layout_constraintEnd_toStartOf="@+id/rectPinkHoriscroll"
+                            app:layout_constraintStart_toEndOf="@+id/rectImg"
+                            app:layout_constraintTop_toTopOf="@+id/rectImg"
+                            app:srcCompat="@drawable/edit_rect_three_horizontalscroll" />
+
+                        <ImageView
+                            android:id="@+id/rectPinkHoriscroll"
+                            android:layout_width="285dp"
+                            android:layout_height="250dp"
+                            android:layout_marginEnd="24dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/rectBlueHoriscroll"
+                            app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+                            app:layout_constraintStart_toEndOf="@+id/rectBlueHoriscroll"
+                            app:layout_constraintTop_toTopOf="@+id/rectBlueHoriscroll"
+                            app:srcCompat="@drawable/edit_rect_two_nestedscroll" />
+
+                        <ImageView
+                            android:id="@+id/starbucksImg"
+                            android:layout_width="133dp"
+                            android:layout_height="214dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintEnd_toEndOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintTop_toTopOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintVertical_bias="0.855"
+                            app:srcCompat="@drawable/starbugs" />
+
+                        <ImageView
+                            android:id="@+id/getfiftyPercentOffIMG"
+                            android:layout_width="102dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="4dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/starbucksImg"
+                            app:layout_constraintEnd_toStartOf="@+id/starbucksImg"
+                            app:layout_constraintHorizontal_bias="0.521"
+                            app:layout_constraintStart_toStartOf="@+id/rectGreenHoriscroll"
+                            app:layout_constraintTop_toTopOf="@+id/starbucksImg"
+                            app:layout_constraintVertical_bias="0.208"
+                            app:srcCompat="@drawable/get_50__off__1_" />
+
+                        <ImageView
+                            android:id="@+id/onbreakfastImg"
+                            android:layout_width="102dp"
+                            android:layout_height="34dp"
+                            app:layout_constraintEnd_toEndOf="@+id/getfiftyPercentOffIMG"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/getfiftyPercentOffIMG"
+                            app:layout_constraintTop_toBottomOf="@id/getfiftyPercentOffIMG"
+                            app:srcCompat="@drawable/on_breakfast_specials_from" />
+
+                        <ImageView
+                            android:id="@+id/starbucktextIMG"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/onbreakfastImg"
+                            app:layout_constraintEnd_toEndOf="@+id/onbreakfastImg"
+                            app:layout_constraintHorizontal_bias="0.568"
+                            app:layout_constraintStart_toStartOf="@+id/onbreakfastImg"
+                            app:layout_constraintTop_toTopOf="@+id/onbreakfastImg"
+                            app:layout_constraintVertical_bias="0.72"
+                            app:srcCompat="@drawable/starbuckswritten" />
+
+                        <ImageView
+                            android:id="@+id/pinkInsideImg"
+                            android:layout_width="139dp"
+                            android:layout_height="179dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@+id/rectPinkHoriscroll"
+                            app:layout_constraintTop_toTopOf="@+id/rectPinkHoriscroll"
+                            app:layout_constraintVertical_bias="1.0"
+                            app:srcCompat="@drawable/pinkinsider" />
+
+                        <ImageView
+                            android:id="@+id/starbucksarrowrectBg"
+                            android:layout_width="41dp"
+                            android:layout_height="17dp"
+                            android:layout_marginTop="20dp"
+                            app:layout_constraintEnd_toEndOf="@+id/onbreakfastImg"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@+id/onbreakfastImg"
+                            app:layout_constraintTop_toBottomOf="@+id/onbreakfastImg"
+                            app:srcCompat="@drawable/rectangle_16" />
+
+                        <ImageView
+                            android:id="@+id/starbucksarrowImg"
+                            android:layout_width="16dp"
+                            android:layout_height="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/starbucksarrowrectBg"
+                            app:layout_constraintEnd_toEndOf="@+id/starbucksarrowrectBg"
+                            app:layout_constraintStart_toStartOf="@+id/starbucksarrowrectBg"
+                            app:layout_constraintTop_toTopOf="@+id/starbucksarrowrectBg"
+                            app:srcCompat="@drawable/vector2" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+
+                <View
+                    android:id="@+id/view3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="24dp"
+                    android:background="@drawable/edit_below_rect"
+                    android:foregroundGravity="center"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+                <TextView
+                    android:id="@+id/discoverSwiggy"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:fontFamily="@font/candal"
+                    android:gravity="center"
+                    android:text="DISCOVER SWIGGY"
+                    android:textColor="#7B7B7B"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/saladinstam"
+                    app:layout_constraintEnd_toEndOf="@+id/view3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/view3"
+                    app:layout_constraintTop_toTopOf="@+id/view3"
+                    app:layout_constraintVertical_bias="0.071" />
+
+                <TextView
+                    android:id="@+id/liveitup"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/anton"
+                    android:paddingStart="20dp"
+                    android:text="@string/liveitup"
+                    android:textColor="#868686"
+                    android:textSize="96sp"
+                    app:layout_constraintBottom_toTopOf="@id/textView4"
+                    app:layout_constraintEnd_toEndOf="@id/saladinstam"
+                    app:layout_constraintHorizontal_bias="0.063"
+                    app:layout_constraintStart_toStartOf="@id/saladinstam"
+                    app:layout_constraintTop_toBottomOf="@id/saladinstam"
+                    app:layout_constraintVertical_bias="0.665" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:paddingStart="20dp"
+                    android:text="@string/craftedwithlove"
+                    android:textColor="#868686"
+                    app:layout_constraintBottom_toBottomOf="@id/view3"
+                    app:layout_constraintEnd_toEndOf="@+id/liveitup"
+                    app:layout_constraintHorizontal_bias="0.021"
+                    app:layout_constraintStart_toStartOf="@+id/liveitup"
+                    app:layout_constraintTop_toBottomOf="@+id/liveitup" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/saladinstam"
+                    android:layout_width="0dp"
+                    android:layout_height="500dp"
+                    android:layout_margin="10dp"
+                    app:cardCornerRadius="20dp"
+                    app:layout_constraintBottom_toTopOf="@id/liveitup"
+                    app:layout_constraintEnd_toEndOf="@id/view3"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@id/view3"
+                    app:layout_constraintTop_toBottomOf="@id/discoverSwiggy"
+                  >
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/frooti2"
+                        android:scaleType="centerCrop"/>
+                </androidx.cardview.widget.CardView>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- constraint under nested scrollbar           -->
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <!--  THIS WILL STICK TO THE BOTTOM  -->
+    <View
+        android:id="@+id/view2"
+        android:layout_width="0dp"
+        android:layout_height="62dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/foodbowlBelow"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingStart="25dp"
+        android:paddingTop="5dp"
+        android:paddingEnd="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/swiggyBellowTrans"
+        app:layout_constraintEnd_toStartOf="@id/instamartBelow"
+        app:layout_constraintStart_toEndOf="@id/swiggyBellowTrans"
+        app:layout_constraintTop_toTopOf="@+id/swiggyBellowTrans"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/group_4" />
+
+    <ImageView
+        android:id="@+id/swiggyBellowTrans"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toStartOf="@id/foodbowlBelow"
+        app:layout_constraintStart_toStartOf="@+id/view2"
+        app:layout_constraintTop_toTopOf="@+id/view2"
+        app:layout_constraintVertical_bias="0.25"
+        app:srcCompat="@drawable/vector" />
+
+    <ImageView
+        android:id="@+id/dineoutBelow"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingStart="27dp"
+        android:paddingTop="6dp"
+        android:paddingEnd="27dp"
+        app:layout_constraintBottom_toBottomOf="@+id/instamartBelow"
+        app:layout_constraintEnd_toStartOf="@id/genieBelow"
+        app:layout_constraintStart_toEndOf="@+id/instamartBelow"
+        app:layout_constraintTop_toTopOf="@+id/instamartBelow"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/group_3" />
+
+    <ImageView
+        android:id="@+id/instamartBelow"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingTop="7dp"
+        app:layout_constraintBottom_toBottomOf="@+id/foodbowlBelow"
+        app:layout_constraintEnd_toStartOf="@id/dineoutBelow"
+        app:layout_constraintStart_toEndOf="@+id/foodbowlBelow"
+        app:layout_constraintTop_toTopOf="@+id/foodbowlBelow"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/shoppingcart" />
+
+    <ImageView
+        android:id="@+id/genieBelow"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:paddingTop="5dp"
+        app:layout_constraintBottom_toBottomOf="@+id/dineoutBelow"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/dineoutBelow"
+        app:layout_constraintTop_toTopOf="@+id/dineoutBelow"
+        app:srcCompat="@drawable/geniebelow" />
+
+    <TextView
+        android:id="@+id/swigbelowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Swiggy"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view2"
+        app:layout_constraintEnd_toEndOf="@+id/swiggyBellowTrans"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/swiggyBellowTrans"
+        app:layout_constraintTop_toBottomOf="@+id/swiggyBellowTrans"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/dineoutbelowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Dineout"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/instabelowText"
+        app:layout_constraintEnd_toStartOf="@id/geniebelowText"
+        app:layout_constraintStart_toEndOf="@+id/instabelowText"
+        app:layout_constraintTop_toTopOf="@+id/instabelowText" />
+
+    <TextView
+        android:id="@+id/foodbowlbelowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Food"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/swigbelowText"
+        app:layout_constraintEnd_toStartOf="@id/instabelowText"
+        app:layout_constraintStart_toEndOf="@+id/swigbelowText"
+        app:layout_constraintTop_toTopOf="@+id/swigbelowText" />
+
+    <TextView
+        android:id="@+id/instabelowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Instamart"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/foodbowlbelowText"
+        app:layout_constraintEnd_toStartOf="@id/dineoutbelowText"
+        app:layout_constraintStart_toEndOf="@+id/foodbowlbelowText"
+        app:layout_constraintTop_toTopOf="@+id/foodbowlbelowText"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/geniebelowText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Genie"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/dineoutbelowText"
+        app:layout_constraintEnd_toEndOf="@+id/view2"
+        app:layout_constraintStart_toEndOf="@+id/dineoutbelowText"
+        app:layout_constraintTop_toTopOf="@+id/dineoutbelowText" />
+<!--    outtermost constraint layout-->
+</androidx.constraintlayout.widget.ConstraintLayout>

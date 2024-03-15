@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SWIGGYF</string>
+    <string name="address">B 702,Grandeur Saffire,Near AmitBloomfield</string>
+    <string name="searchstring">Search for dishes, restaurants &amp; groceries</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="liveitup">Live \nit up!</string>
+    <string name="craftedwithlove">crafted with ❤ by valen</string>
+
+</resources>
